@@ -32,7 +32,7 @@ export default function Withdraw() {
       setButtonActive(false); // If the conditions are not met, disable the button.
     }
   }
-  
+
   function handleWithdraw() { // Function to handle a withdrawal action.
     if (!validate(amount, "amount")) return; // Check if the 'amount' input is valid using the 'validate' function. If it's not valid, return and do not proceed with the withdrawal.
 
@@ -49,58 +49,58 @@ export default function Withdraw() {
       return; // Return to exit the function since the withdrawal is not possible.
     }
 
-    user.balance = Number(user.balance) - Number(amount);
-    setBalance(user.balance);
-    ctx.users[ctx.users.length - 1] = user;
-    setShow(false);
+    user.balance = Number(user.balance) - Number(amount); // Deduct the withdrawal 'amount' from the user's current balance.
+    setBalance(user.balance); // Update the 'balance' state with the new balance value for the user.
+    ctx.users[ctx.users.length - 1] = user; // Update the user data in the 'ctx' context by replacing the last user with the modified user object.
+    setShow(false); // Set the 'show' state to 'false' to hide or deactivate a component (or perform a similar action).
   }
 
-  function clearForm() {
-    setAmount("");
-    setShow(true);
-    setButtonActive(false);
+  function clearForm() { // Function to clear/reset the form and related component state.
+    setAmount(""); // Clear the 'amount' input field by setting its value to an empty string.
+    setShow(true); // Show the component (or set its visibility to the initial state).
+    setButtonActive(false); // Set the 'buttonActive' state to 'false' to deactivate or disable a button.
   }
 
-  return (
-    <Card
-      bgcolor="secondary"
-      header="Withdraw Amount"
-      status={status}
-      body={
-        show ? (
-          <>
-            <h2>Balance: ${balance}</h2>
-            Amount
-            <br />
-            <input
-              type="input"
-              style={{ backgroundColor: "lightgray" }}
-              className="form-control"
-              id="amount"
-              placeholder="Enter amount"
-              value={amount}
-              onChange={handleAmountChange}
+  return ( // Return a JSX component that displays withdrawal functionality.
+    <Card // Render a custom 'Card' component with specific props.
+      bgcolor="secondary" // Set the background color of the card to "secondary".
+      header="Withdraw Amount" // Set the header text of the card to "Withdraw Amount".
+      status={status} // Pass the 'status' prop to display a status message.
+      body={ // Render the body of the card, which contains conditional content.
+        show ? ( // Render this content if 'show' is true (component is visible).
+          <> {/* This React fragment is used to group multiple elements without introducing an additional parent element in the DOM. */}
+            <h2>Balance: ${balance}</h2> {/* Display the user's balance with an appropriate heading. */}
+            Amount {/* Display the label "Amount" */}
+            <br /> {/* This 'br' element represents a line break, creating vertical spacing between elements. */}
+            <input // This is an input element used for user data entry or input.
+              type="input" // Specify the input type as "input" (it's more commonly "text" for text input).
+              style={{ backgroundColor: "lightgray" }} // Set the background color of the input field to light gray.
+              className="form-control" // Apply the "form-control" CSS class to style the input field.
+              id="amount" // Assign a unique identifier ("id") to the input field.
+              placeholder="Enter amount" // Provide a placeholder text for user guidance.
+              value={amount} // Bind the 'value' prop to the 'amount' state, ensuring it reflects the current value.
+              onChange={handleAmountChange} // Specify the event handler 'onChange' to call the 'handleAmountChange' function when the input changes.
             />
-            <br />
-            <button
-              type="submit"
-              className="btn btn-light"
-              disabled={!buttonActive}
-              onClick={handleWithdraw}
-            >
-              Withdraw
-            </button>
-          </>
-        ) : (
-          <>
-            <h5>Success</h5>
-            <h2>Balance: ${balance}</h2>
-            <button type="submit" className="btn btn-light" onClick={clearForm}>
-              Make another withdraw
-            </button>
-          </>
-        )
-      }
-    />
-  );
-}
+            <br /> {/* This 'br' element represents a line break, creating vertical spacing between elements. */}
+            <button 
+              type="submit" // Define the button type as "submit" for form submission (can be "button" or "submit").
+              className="btn btn-light" // Apply CSS classes "btn" and "btn-light" to style the button.
+              disabled={!buttonActive} /* Apply custom CSS classes to style the element button with a light appearance. The classes "btn" and "btn-light" define specific button styles in the project's CSS. */
+              onClick={handleWithdraw}>Withdraw {/* Attach an event handler, 'handleWithdraw', to trigger a function when the button is clicked. This allows for specific actions or logic to be executed in response to the button click event. */}
+            </button> {/* Closing button tag */}
+          </> /* Closing fragment tag */
+        ) : ( // Render this content if 'show' is false (component is hidden).
+          <> {/* This React fragment is used to group multiple elements without introducing an additional parent element in the DOM. */}
+            <h5>Success</h5> {/* Display a success message with an appropriate heading. */}
+            <h2>Balance: ${balance}</h2> {/* Display the user's balance with an appropriate heading. */}  
+            <button 
+              type="submit" // Define the button type as "submit" for form submission (can be "button" or "submit").
+              className="btn btn-light" // Apply CSS classes "btn" and "btn-light" to style the button.
+              onClick={clearForm}>Make another withdraw {/* Attach an event handler, 'clearForm', to trigger a function when the button is clicked. This allows for specific actions or logic to be executed in response to the button click event. */}
+            </button> {/* Closing button tag */}
+          </> /* Closing fragment tag */
+        ) // Closing ternary operator
+      } // Closing body prop
+    /> // Closing Card component
+  ); // Closing return statement
+}; // Closing Withdraw function
