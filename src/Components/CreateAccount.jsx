@@ -1,7 +1,6 @@
 import React from 'react';
 import Card from './Card';
 import { UserContext } from './Context';
-//import '../App.css'; // Import the App.css file
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function CreateAccount() {
@@ -83,15 +82,7 @@ export default function CreateAccount() {
     setShow(true);
   }
 
-  // const containerStyle = {
-  //   position: 'fixed',
-  //   top: '60px',
-  //   width: '100%',
-  //   zIndex: '100',
-  // };
-
   return (
-    // <div style={containerStyle}>
     <Card
       bgcolor="secondary"
       txtcolor="white"
@@ -133,6 +124,5 @@ export default function CreateAccount() {
         </>
       )}
     />
-    // </div>
   );
 };

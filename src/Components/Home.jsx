@@ -1,7 +1,6 @@
 import React from 'react';
 import Card from './Card';
 import Logo from '../assets/bank.png';
-//import '../App.css'; // Import the App.css file
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

@@ -8,22 +8,22 @@ import Deposit from './Components/Deposit';
 import Withdraw from './Components/Withdraw';
 import AllData from './Components/AllData';
 
-if (window.performance) { // Check if the window.performance object is available in the user's browser
-  const navigation = performance.getEntriesByType("navigation")[0]; // Get the first entry of type "navigation" from the Performance Timeline
-  if (navigation && navigation.type === "reload") { // Check if the 'navigation' entry exists and if the page was reloaded by the user
-    window.location.hash = '/'; // If the current page was reloaded by the user, redirect to the homepage
-  } // Ends the if statement
-} // Ends the if statement
+if (window.performance) {
+  const navigation = performance.getEntriesByType("navigation")[0];
+  if (navigation && navigation.type === "reload") {
+    window.location.hash = '/';
+  }
+}
 
 
 export default function App() {
   //const [count, setCount] = useState(0)
 
   return (
-    <HashRouter> {/*Provides the router functionality*/}
-      <NavBar /> {/*Displays the navigation bar*/}
-      <UserContext.Provider value={{ users: [{ name: 'abel', email: 'abel@mit.edu', password: 'secret', balance: 100 }] }}> {/*Provides the user data*/}
-        <div className="container" style={{ padding: "20px" }}> {/*Sets the container style*/}
+    <HashRouter> 
+      <NavBar />
+      <UserContext.Provider value={{ users: [{ name: 'abel', email: 'abel@mit.edu', password: 'secret', balance: 100 }] }}>
+        <div className="container" style={{ padding: "20px" }}>
           <Routes>
             <Route path="/" exact element={<Home />} />
             <Route path="/CreateAccount/" element={<CreateAccount />} />
@@ -31,8 +31,8 @@ export default function App() {
             <Route path="/withdraw/" element={<Withdraw />} />
             <Route path="/alldata/" element={<AllData />} />
           </Routes>
-        </div> {/*Ends the container*/}
-      </UserContext.Provider> {/*Ends the user data*/}
-    </HashRouter> // Ends the HashRouter
+        </div>
+      </UserContext.Provider>
+    </HashRouter>
   );
 };

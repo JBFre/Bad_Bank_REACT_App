@@ -1,5 +1,4 @@
 import React from 'react';
-//import '../App.css'; // Import the App.css file
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Card(props) {

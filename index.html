@@ -15,19 +15,19 @@
   
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script> <!-- This links to the jQuery library on the web -->
+    crossorigin="anonymous"></script> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-    crossorigin="anonymous"></script> <!-- This links to the Bootstrap JavaScript -->
+    crossorigin="anonymous"></script> 
 
-    <script> // This is to prevent a warning message from React Router
-      console.oldWarn = console.warn; // This is a variable that stores the console.warn function
-      console.warn = function (message) { // This is a function that overrides the console.warn function
-        if (message.indexOf('You are using the in-browser Babel transformer') === -1) { // This checks if the message is the one we want to ignore
-          console.oldWarn(message); // This calls the original console.warn function 
-        } // This closes the if statement
-      }; // This closes the function
-    </script> <!-- This closes the script block -->
+    <script> 
+      console.oldWarn = console.warn; 
+      console.warn = function (message) {
+        if (message.indexOf('You are using the in-browser Babel transformer') === -1) {
+          console.oldWarn(message);
+        }
+      };
+    </script>
   
   </body>
 </html>

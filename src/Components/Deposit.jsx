@@ -1,14 +1,13 @@
 import React from 'react';
 import Card from './Card';
 import { UserContext } from './Context';
-//import '../App.css'; // Import the App.css file
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Deposit() {
   const [show, setShow] = React.useState(true);
   const [status, setStatus] = React.useState('');
   const [amount, setAmount] = React.useState('');
-  const [buttonActive, setButtonActive] = React.useState(false);  // Added state to control button activation
+  const [buttonActive, setButtonActive] = React.useState(false);
   const ctx = React.useContext(UserContext);
   const [balance, setBalance] = React.useState(ctx.users[ctx.users.length - 1].balance);
 
@@ -21,7 +20,7 @@ export default function Deposit() {
     return true;
   }
 
-  function handleAmountChange(e) {  // Function to update the button state
+  function handleAmountChange(e) {
     const value = e.currentTarget.value;
     setAmount(value);
 
@@ -51,18 +50,10 @@ export default function Deposit() {
   function clearForm() {
     setAmount('');
     setShow(true);
-    setButtonActive(false);  // Reset the button state when the form is cleared
+    setButtonActive(false);
   }
 
-  // const containerStyle = {
-  //   position: 'fixed',
-  //   top: '60px',
-  //   width: '100%',
-  //   zIndex: '100',
-  // };
-
   return (
-    // <div style={containerStyle}>
     <Card
       bgcolor="secondary"
       header="Deposit Amount"
@@ -81,13 +72,13 @@ export default function Deposit() {
             id="amount"
             placeholder="Enter amount"
             value={amount}
-            onChange={handleAmountChange}  // Using the new function here
+            onChange={handleAmountChange}
           />
           <br />
           <button
             type="submit"
             className="btn btn-light"
-            disabled={!buttonActive}  // Button will be disabled if buttonActive is false
+            disabled={!buttonActive}
             onClick={handleDeposit}
           >
             Deposit
@@ -109,6 +100,5 @@ export default function Deposit() {
         </>
       )}
     />
-    // </div>
   );
 };
