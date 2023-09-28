@@ -9,9 +9,9 @@ export default function Home() {
     <Card
       bgcolor="secondary"
       txtcolor="white"
-      header="BadBank Landing Module"
+      header="Kryptonian Banking"
       title="Welcome to the Bank of Zod"
-      text="Krypton's most trusted bank"
+      text="In Zod We Trust"
       body={(<img src={Logo} className="img-fluid" alt="Responsive image" />)}
     />
   );

@@ -19,7 +19,7 @@ export default function AllData() {
 
   return (
     <>
-      <h5>AllData</h5>
+    <h5 style={{ color: 'black', fontSize: '40px', backgroundColor: 'lightgray', padding: '5px', display: 'inline-block' }}>AllData</h5>
       <table className="table table-bordered table-striped">
         <thead>
           <tr>

@@ -80,9 +80,9 @@ export default function Withdraw() {
               placeholder="Enter amount" // Provide a placeholder text for user guidance.
               value={amount} // Bind the 'value' prop to the 'amount' state, ensuring it reflects the current value.
               onChange={handleAmountChange} // Specify the event handler 'onChange' to call the 'handleAmountChange' function when the input changes.
-            />
+            /> {/* Closing input tag */}
             <br /> {/* This 'br' element represents a line break, creating vertical spacing between elements. */}
-            <button 
+            <button // This is a button element used to trigger an action.
               type="submit" // Define the button type as "submit" for form submission (can be "button" or "submit").
               className="btn btn-light" // Apply CSS classes "btn" and "btn-light" to style the button.
               disabled={!buttonActive} /* Apply custom CSS classes to style the element button with a light appearance. The classes "btn" and "btn-light" define specific button styles in the project's CSS. */
@@ -93,7 +93,7 @@ export default function Withdraw() {
           <> {/* This React fragment is used to group multiple elements without introducing an additional parent element in the DOM. */}
             <h5>Success</h5> {/* Display a success message with an appropriate heading. */}
             <h2>Balance: ${balance}</h2> {/* Display the user's balance with an appropriate heading. */}  
-            <button 
+            <button // This is a button element used to trigger an action. 
               type="submit" // Define the button type as "submit" for form submission (can be "button" or "submit").
               className="btn btn-light" // Apply CSS classes "btn" and "btn-light" to style the button.
               onClick={clearForm}>Make another withdraw {/* Attach an event handler, 'clearForm', to trigger a function when the button is clicked. This allows for specific actions or logic to be executed in response to the button click event. */}

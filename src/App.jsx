@@ -22,7 +22,7 @@ export default function App() {
   return (
     <HashRouter> 
       <NavBar />
-      <UserContext.Provider value={{ users: [{ name: 'abel', email: 'abel@mit.edu', password: 'secret', balance: 100 }] }}>
+      <UserContext.Provider value={{ users: [{ name: 'Zod', email: 'GeneralZod@Krypton.mcu', password: 'PhantomZone', balance: 1000000000000 }] }}>
         <div className="container" style={{ padding: "20px" }}>
           <Routes>
             <Route path="/" exact element={<Home />} />
