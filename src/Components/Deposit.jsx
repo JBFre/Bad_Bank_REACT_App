@@ -28,6 +28,9 @@ export default function Deposit() {
       setButtonActive(true);
     } else {
       setButtonActive(false);
+      setStatus('Error: Please enter in a number');
+      setTimeout(() => setStatus(''), 3000);
+      return;
     }
   }
 

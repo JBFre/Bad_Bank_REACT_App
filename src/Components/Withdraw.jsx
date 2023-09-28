@@ -30,6 +30,9 @@ export default function Withdraw() {
       setButtonActive(true); // If the conditions are met, enable the button.
     } else { // If the conditions for a valid input value are not met, disable the button.
       setButtonActive(false); // If the conditions are not met, disable the button.
+      setStatus('Error: Please enter in a number');
+      setTimeout(() => setStatus(''), 3000);
+      return;
     }
   }
 

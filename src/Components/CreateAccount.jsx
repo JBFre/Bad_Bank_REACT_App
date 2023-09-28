@@ -50,11 +50,19 @@ export default function CreateAccount() {
   function handleCreate() {
     console.log(name, email, password);
     if (!validate(name, 'name')) return;
-    if (!/^[a-zA-Z]+$/.test(name)) {
-      setStatus('Error: name can only contain letters');
-      setTimeout(() => setStatus(''), 3000);
-      return;
+    setName(name.trim());
+    if (!isNaN(name)) {
+        setStatus('Error: name can only contain letters');
+        setTimeout(() => setStatus(''), 3000);
+        return;
     }
+
+
+    // if (!/^[a-zA-Z]+$/.test(name)) {
+    //   setStatus('Error: name can only contain letters');
+    //   setTimeout(() => setStatus(''), 3000);
+    //   return;
+    // }
 
     if (!validate(email, 'email')) return;
     if (!/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
