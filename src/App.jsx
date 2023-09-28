@@ -1,6 +1,5 @@
 import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
 import { UserContext } from './Components/Context';
 import NavBar from './Components/NavBar';
 import Home from './Components/Home';
@@ -22,18 +21,18 @@ export default function App() {
 
   return (
     <HashRouter> {/*Provides the router functionality*/}
-    <NavBar /> {/*Displays the navigation bar*/}
-    <UserContext.Provider value={{ users: [{ name: 'abel', email: 'abel@mit.edu', password: 'secret', balance: 100 }] }}> {/*Provides the user data*/}
-      <div className="container" style={{ padding: "20px" }}> {/*Sets the container style*/}
-       <Routes>
-        <Route path="/" exact element={<Home/>}/>
-        <Route path="/CreateAccount/" element={<CreateAccount/>}/>
-        <Route path="/deposit/" element={<Deposit/>}/> 
-        <Route path="/withdraw/" element={<Withdraw/>}/>
-        <Route path="/alldata/" element={<AllData/>}/>
-       </Routes>
-      </div> {/*Ends the container*/}
-    </UserContext.Provider> {/*Ends the user data*/}
-  </HashRouter> // Ends the HashRouter
-  )
-}
+      <NavBar /> {/*Displays the navigation bar*/}
+      <UserContext.Provider value={{ users: [{ name: 'abel', email: 'abel@mit.edu', password: 'secret', balance: 100 }] }}> {/*Provides the user data*/}
+        <div className="container" style={{ padding: "20px" }}> {/*Sets the container style*/}
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+            <Route path="/CreateAccount/" element={<CreateAccount />} />
+            <Route path="/deposit/" element={<Deposit />} />
+            <Route path="/withdraw/" element={<Withdraw />} />
+            <Route path="/alldata/" element={<AllData />} />
+          </Routes>
+        </div> {/*Ends the container*/}
+      </UserContext.Provider> {/*Ends the user data*/}
+    </HashRouter> // Ends the HashRouter
+  );
+};

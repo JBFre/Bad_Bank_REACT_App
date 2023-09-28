@@ -1,42 +1,71 @@
+/* Style for the navigation bar */
+.navbar {
+  position: fixed; /* Fix the position of the navbar */
+  top: 0; /* Position it at the top of the viewport */
+  left: 0; /* Position it at the left of the viewport */
+  right: 0; /* Stretch it across the full width of the viewport */
+  z-index: 1000; /* Set the z-index to control stacking order */
+}
+
+/* Styles for the root container */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  max-width: 1280px; /* Set the maximum width of the root container */
+  margin: 20px auto; /* Center the container vertically and set margin to 50px at the top and bottom */
+  padding: 2rem; /* Add padding inside the root container */
+  text-align: left; /* Align text to the left within the root container */
+  margin-left: -40px; /* Move the container 20px from the left side of the screen */
 }
 
+/* Define styles for elements with the "logo" class */
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  height: 6em; /* Set the height of the logo element */
+  padding: 1.5em; /* Add padding around the logo for spacing and clickability */
+  will-change: filter; /* Hint to the browser that the "filter" property will change */
+  transition: filter 300ms; /* Apply a smooth transition to the "filter" property */
 }
 
+/* Define styles for the "logo" class when it's hovered over */
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa); /* Add a drop-shadow effect on hover */
+}
+
+/* Define styles for elements with both "logo" and "react" classes when hovered */
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa); /* Add a different drop-shadow effect on hover */
+}
+
+
+/* Keyframe animation to spin the logo */
 @keyframes logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0deg); /* Start rotation from 0 degrees */
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg); /* Rotate the logo 360 degrees for a full spin */
   }
 }
 
+/* Apply the logo-spin animation to elements with the "logo" class */
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+    animation: logo-spin infinite 20s linear; /* Apply the logo-spin animation */
   }
 }
 
-.card {
-  padding: 2em;
+/* Styles for the "read-the-docs" class */
+.read-the-docs {
+  color: #e09898; /* Set the text color for elements with the "read-the-docs" class */
 }
 
-.read-the-docs {
-  color: #888;
+/* Styles for the table header */
+table.th {
+  background-color:  rgb(117, 115, 115) !important; /* Set the background color of table header cells */
+  color: rgb(255, 255, 255) !important; /* Set the text color of table header cells */
 }
+
+/* Styles for the table body */
+table.td {
+  background-color: rgb(68, 66, 66) !important; /* Set the background color of table data cells */
+  color: rgb(255, 255, 255) !important; /* Set the text color of table data cells */
+}
+

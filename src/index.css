@@ -1,69 +1,72 @@
+/* Set the font family for the entire document */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; /* Specify the font family */
+  line-height: 1.5; /* Set the line height for text */
+  font-weight: 400; /* Set the default font weight */
+  color-scheme: light dark; /* Specify color schemes for light and dark modes */
+  color: rgba(255, 255, 255, 0.87); /* Set the text color with alpha transparency */
+  background-color: #929191; /* Set the background color */
+  font-synthesis: none; /* Prevent font synthesis */
+  text-rendering: optimizeLegibility; /* Optimize text rendering for legibility */
+  -webkit-font-smoothing: antialiased; /* Enable antialiasing for text on webkit browsers */
+  -moz-osx-font-smoothing: grayscale; /* Enable font smoothing for macOS */
+  -webkit-text-size-adjust: 100%; /* Adjust text size for compatibility */
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Adjust body layout */
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  margin: 0; /* Remove default margin */
+  display: flex; /* Use flex display for layout */
+  justify-content: flex-start; /* Align items to the left (start) of the flex container */
+  align-items: flex-start; /* Align items to the top (start) of the flex container */
+  min-width: 320px; /* Set a minimum width for the body */
+  min-height: 100vh; /* Set a minimum height for the body to cover the viewport height */
 }
 
+/* Adjust styles for h1 element */
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 2em; /* Set the font size for h1 element */
+  line-height: 1.1; /* Set the line height for text within h1 */
 }
 
+/* Style for buttons */
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  border-radius: 8px; /* Set the border radius to create rounded buttons */
+  border: 1px solid transparent; /* Add a transparent border to the button */
+  padding: 0.6em 1.2em; /* Set padding for button content */
+  font-size: 1em; /* Set the font size for buttons */
+  font-weight: 500; /* Set font weight for buttons */
+  font-family: inherit; /* Inherit font family from the parent element */
+  background-color: #9c4444; /* Set the background color of buttons */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: border-color 0.25s; /* Add a smooth transition for border color */
 }
+
+/* Style for buttons when hovered */
 button:hover {
-  border-color: #646cff;
+  border-color: #646cff; /* Change border color on button hover */
 }
+
+/* Styles for buttons in focus state */
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 50px auto -webkit-focus-ring-color; /* Customize the focus outline for buttons */
 }
 
+/* Media query for light color scheme preference */
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #991c1c; /* Set text color for light color scheme */
+    background-color: #ffffff; /* Set background color for light color scheme */
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+}
+
+/* Styles for anchor links when hovered */
+a:hover {
+  color: #747bff; /* Change text color on link hover */
+}
+
+/* Styles for buttons */
+button {
+  background-color: #853838; /* Set the background color for buttons */
 }
