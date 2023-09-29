@@ -1,8 +1,7 @@
 import React from 'react';
 import Card from './Card';
-import Logo from '../assets/bank.png';
+import Zod from '../assets/zod.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 export default function Home() {
   return (
@@ -12,7 +11,11 @@ export default function Home() {
       header="Kryptonian Banking"
       title="Welcome to the Bank of Zod"
       text="In Zod We Trust"
-      body={(<img src={Logo} className="img-fluid" alt="Responsive image" />)}
+      body={
+        <>
+          <img src={Zod} className="img-fluid" alt=" Image" /> 
+        </>
+      }
     />
   );
 };

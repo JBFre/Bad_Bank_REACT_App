@@ -1,16 +1,16 @@
 /* Style for the navigation bar */
-.navbar {
-  position: fixed;
+/* .navbar { */
+  /* position: fixed; */
   /* Fix the position of the navbar */
-  top: 0;
+  /* top: 0; */
   /* Position it at the top of the viewport */
-  left: 0;
+  /* left: 0; */
   /* Position it at the left of the viewport */
-  right: 0;
+  /* right: 0; */
   /* Stretch it across the full width of the viewport */
-  z-index: 1000;
+  /* z-index: 1000; */
   /* Set the z-index to control stacking order */
-}
+/* } */
 
 /* Styles for the root container */
 #root {
@@ -26,70 +26,89 @@
   /* Move the container 20px from the left side of the screen */
 }
 
-/* Define styles for elements with the "logo" class */
-.logo {
-  height: 6em;
-  /* Set the height of the logo element */
-  padding: 1.5em;
-  /* Add padding around the logo for spacing and clickability */
-  will-change: filter;
-  /* Hint to the browser that the "filter" property will change */
-  transition: filter 300ms;
-  /* Apply a smooth transition to the "filter" property */
+body {
+  background-image: url('../src/assets/krypton.png'); /* Adjust the path to your image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* This keeps the background fixed while scrolling */
 }
+
+/* Define styles for elements with the "logo" class */
+/* .logo { */
+  /* height: 15em; */
+  /* Set the height of the logo element */
+  /* padding: 1.5em; */
+  /* Add padding around the logo for spacing and clickability */
+  /* will-change: filter; */
+  /* Hint to the browser that the "filter" property will change */
+  /* transition: filter 300ms; */
+  /* Apply a smooth transition to the "filter" property */
+/* } */
+
+/* .zod
+{
+  height: 6em;
+  Set the height of the logo element
+  padding: 1.5em;
+  Add padding around the logo for spacing and clickability
+  will-change: filter;
+  Hint to the browser that the "filter" property will change
+  transition: filter 300ms;
+  Apply a smooth transition to the "filter" property
+} */
 
 /* Define styles for the "logo" class when it's hovered over */
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+/* .logo:hover { */
+  /* filter: drop-shadow(0 0 2em #646cffaa); */
   /* Add a drop-shadow effect on hover */
-}
+/* } */
 
 /* Define styles for elements with both "logo" and "react" classes when hovered */
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* .logo.react:hover { */
+  /* filter: drop-shadow(0 0 2em #61dafbaa); */
   /* Add a different drop-shadow effect on hover */
-}
+/* } */
 
 
 /* Keyframe animation to spin the logo */
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* @keyframes logo-spin { */
+  /* from { */
+    /* transform: rotate(0deg); */
     /* Start rotation from 0 degrees */
-  }
+  /* } */
 
-  to {
-    transform: rotate(360deg);
+  /* to { */
+    /* transform: rotate(360deg); */
     /* Rotate the logo 360 degrees for a full spin */
-  }
-}
+  /* } */
+/* } */
 
 /* Apply the logo-spin animation to elements with the "logo" class */
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* @media (prefers-reduced-motion: no-preference) { */
+  /* a:nth-of-type(2) .logo { */
+    /* animation: logo-spin infinite 20s linear; */
     /* Apply the logo-spin animation */
-  }
-}
+  /* } */
+/* } */
 
 /* Styles for the "read-the-docs" class */
-.read-the-docs {
-  color: #e09898;
+/* .read-the-docs { */
+  /* color: #e09898; */
   /* Set the text color for elements with the "read-the-docs" class */
-}
+/* } */
 
 /* Styles for the table header */
-table.th {
-  background-color: rgb(117, 115, 115) !important;
+/* table.th { */
+  /* background-color: rgb(117, 115, 115) !important; */
   /* Set the background color of table header cells */
-  color: rgb(255, 255, 255) !important;
+  /* color: rgb(255, 255, 255) !important; */
   /* Set the text color of table header cells */
-}
+/* } */
 
 /* Styles for the table body */
-table.td {
-  background-color: rgb(68, 66, 66) !important;
+/* table.td { */
+  /* background-color: rgb(68, 66, 66) !important; */
   /* Set the background color of table data cells */
-  color: rgb(255, 255, 255) !important;
+  /* color: rgb(255, 255, 255) !important; */
   /* Set the text color of table data cells */
-}
+/* } */
