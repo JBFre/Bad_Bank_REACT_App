@@ -1,34 +1,57 @@
-<!DOCTYPE html> <!-- Declare the document type as HTML5. -->
-<html lang="en"> <!-- Start the HTML document with the language set to English (en). -->
-  <head> <!-- The <head> element houses essential metadata and settings for the HTML document, such as character encoding, document title, and linked stylesheets or scripts. It plays a pivotal role in document interpretation, browser rendering, and SEO optimization. -->
-    <meta charset="UTF-8" /> <!-- This <meta> tag specifies UTF-8 encoding, ensuring proper display of text, including special characters, symbols, and multilingual content. -->
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" /> <!-- This <link> tag is used to define the website's favicon, which is displayed in the browser tab. It specifies an SVG image ("/vite.svg") to be used as the favicon in XML format. -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- This <meta> tag configures the viewport settings for responsive web design. It ensures that the web page adapts its layout to the device's screen width and sets the initial zoom scale to 1.0, providing an optimal viewing experience on various screen sizes, including mobile devices. -->
-    <title>Vite + React</title> <!-- The <title> element sets the title of the web page to "Vite + React." This title is displayed in the browser's title bar or tab, providing a brief and recognizable description of the page's content or purpose. -->
-      <style>
-        body {
-          background-color: rgba(0, 0, 0, 0.705) !important;
-          /* Add background image URL
-          background-image: url('./src/assets/zod.png');
-          /* Specify background image size and repeat properties if needed */
-          /* background-size: cover; */
-          /* background-repeat: no-repeat; */
-        }
-      </style>
+<!-- Declare the document type as HTML5. -->
+<!DOCTYPE html> 
+
+<!-- Start the HTML document with the language set to English (en). -->
+<html lang="en"> 
+
+  <!-- Head Section: Houses essential metadata and settings for the HTML document. -->
+  <head> 
+    
+    <!-- Character Encoding: Specifies UTF-8 encoding for proper text display. -->
+    <meta charset="UTF-8" /> 
+    
+    <!-- Favicon: Defines the website's favicon shown in the browser tab. -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" /> 
+    
+    <!-- Viewport: Configures the settings for responsive design. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    
+    <!-- Page Title: Sets the title of the webpage shown in the browser tab. -->
+    <title>Vite + React</title> 
+    
+    <!-- Custom Styles: Here we set custom styles for the page. -->
+    <!-- <style> -->
+      <!-- body { -->
+        <!-- background-color: rgba(0, 0, 0, 0.705) !important; -->
+      <!-- }  -->
+    <!-- </style> -->
   </head>
+
+  <!-- Body Section: The main content of the HTML document goes here. -->
   <body>
+
+    <!-- Root Div: Often used as the mounting point for React applications. -->
     <div id="root"></div>
-       
+
+    <!-- Script Section: JavaScript files or modules to include on the page. -->
+
+    <!-- Main JS: Your main JavaScript or JSX file for your app. -->
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Bootstrap JS: Adds Bootstrap functionality. -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-  
+
+    <!-- jQuery: Required for Bootstrap and other functionalities. -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script> 
+
+    <!-- Bootstrap Bundle: Additional Bootstrap JavaScript. -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"></script> 
 
+    <!-- Custom Script: Suppresses specific console warnings. -->
     <script> 
       console.oldWarn = console.warn; 
       console.warn = function (message) {
@@ -37,5 +60,6 @@
         }
       };
     </script>
+
   </body>
 </html>

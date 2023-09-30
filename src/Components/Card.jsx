@@ -9,7 +9,7 @@ export default function Card(props) {
   }
 
   return (
-    <div className={classes()} style={{ maxWidth: "22rem" }}>
+    <div className={classes()} style={{ maxWidth: "26rem", border: '2px solid red' }}>
       <div className="card-header">{props.header}</div>
       <div className="card-body">
         {props.title && (<h5 className="card-title">{props.title}</h5>)}

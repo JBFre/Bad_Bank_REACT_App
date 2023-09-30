@@ -2,6 +2,7 @@ import React from 'react';
 import Card from './Card';
 import { UserContext } from './Context';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css';
 
 export default function CreateAccount() {
   const [show, setShow] = React.useState(true);
@@ -22,32 +23,32 @@ export default function CreateAccount() {
   }
 
   function checkCreateAccountFields(e) {
-    if (name.trim() && email && password) {
-      setButton(true);
-    } else {
-      setButton(false);
-
+    
       let element = e.target.id;
       if (element === 'name' && name === '') {
         setStatus('Error: Please enter a valid name');
         setTimeout(() => setStatus(''), 3000);
+      return
       }
 
       if (element === 'email' && email === '') {
         setStatus('Error: Please enter an email address');
         setTimeout(() => setStatus(''), 3000);
-
+        return;
       }
       if (element === 'password' && password === '') {
         setStatus('Error: Please enter a password');
         setTimeout(() => setStatus(''), 3000);
         return;
       }
-    }
+
+    if (name.trim() !=='' && email !=='' && password !=='') {setButton(true); return;}   
+  
   }
 
 
   function handleCreate() {
+    if (name.trim() !=='' && email !=='' && password !=='') {setButton(true);}
     console.log(name, email, password);
     if (!validate(name, 'name')) return;
     setName(name.trim());
@@ -70,8 +71,9 @@ export default function CreateAccount() {
       setTimeout(() => setStatus(''), 3000);
       return;
     }
+    const randomBalance = Math.floor(Math.random() * 101) + 50;  // Generates random whole number between 50 and 150
     if (!validate(button, 'button')) return;
-    ctx.users.push({ name, email, password, balance: 100 });
+    ctx.users.push({ name, email, password, balance: randomBalance });
     setShow(false);
   }
 
@@ -85,7 +87,7 @@ export default function CreateAccount() {
 
   return (
     <Card
-      bgcolor="secondary"
+      bgcolor="dark"
       txtcolor="white"
       header="Create Account"
       status={status}
@@ -93,7 +95,7 @@ export default function CreateAccount() {
         <>
           Name<br /><input
             type="input"
-            style={{ backgroundColor: 'lightgray' }}
+            //style={{ backgroundColor: 'black', color: 'white', fontWeight: 'bolder' }}
             className="form-control"
             id="name"
             placeholder="Enter name"
@@ -102,7 +104,7 @@ export default function CreateAccount() {
             onBlur={checkCreateAccountFields} /><br />
           Email address<br /><input
             type="input"
-            style={{ backgroundColor: 'lightgray' }}
+            //style={{ backgroundColor: 'black', color: 'white', fontWeight: 'bolder' }}
             className="form-control" id="email"
             placeholder="Enter email"
             value={email}
@@ -110,7 +112,7 @@ export default function CreateAccount() {
             onBlur={checkCreateAccountFields} /><br />
           Password<br /><input
             type="password"
-            style={{ backgroundColor: 'lightgray' }}
+            // style={{ backgroundColor: 'black', fontWeight: 'bolder' }}
             className="form-control"
             id="password"
             placeholder="Enter password"

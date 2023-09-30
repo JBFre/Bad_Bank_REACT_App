@@ -10,7 +10,7 @@
   /* Specify color schemes for light and dark modes */
   color: rgba(255, 255, 255, 0.87);
   /* Set the text color with alpha transparency */
-  background-color: #929191;
+  background-color: #000000;
   /* Set the background color */
   font-synthesis: none;
   /* Prevent font synthesis */
@@ -71,36 +71,36 @@ button {
 }
 
 /* Style for buttons when hovered */
-button:hover {
-  border-color: #646cff;
-  /* Change border color on button hover */
-}
+/* button:hover {
+  border-color: #646cff; */
+  /* Change border color on button hover 
+}*/
 
 /* Styles for buttons in focus state */
-button:focus,
+/* button:focus,
 button:focus-visible {
-  outline: 50px auto -webkit-focus-ring-color;
-  /* Customize the focus outline for buttons */
-}
+  outline: 50px auto -webkit-focus-ring-color; */
+  /* Customize the focus outline for buttons 
+}*/
 
 /* Media query for light color scheme preference */
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
-    color: #991c1c;
+    color: #991c1c; */
     /* Set text color for light color scheme */
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     /* Set background color for light color scheme */
-  }
-}
+  /* } */
+/* } */
 
 /* Styles for anchor links when hovered */
-a:hover {
-  color: #747bff;
-  /* Change text color on link hover */
-}
+/* a:hover {
+  color: #747bff; */
+  /* Change text color on link hover 
+} */
 
 /* Styles for buttons */
-button {
-  background-color: #853838;
+/* button {
+  background-color: #853838; */
   /* Set the background color for buttons */
 }
