@@ -16,20 +16,24 @@ export default function Deposit() { // Defines and exports the Deposit function 
   const ctx = React.useContext(UserContext); // Gets the user context from the Context.jsx file
   const [balance, setBalance] = React.useState(ctx.users[ctx.users.length - 1].balance); // Stores the balance of the last user in the users array
 
-  function validate(field, label) {
-    if (!field) { 
-      setStatus('Error: ' + label); 
-      setTimeout(() => setStatus(''), 3000); 
-      return false; 
+  
+  
+  
+  //Validate Function
+  function validate(field, label) { // This function checks if the Deposit field is empty or not. If it is empty, it is set to a temporary error message.
+    if (!field) {  // If the field is empty (false), the function will return early and display an error message at the bottom of the form for 3 seconds before clearing it out again.   
+      setStatus('Error: ' + label); // Sets the status to the error message and the label of the field that is empty (e.g. Error: amount) 
+      setTimeout(() => setStatus(''), 3000); // Clears the status after 3 seconds  
+      return false;  // Returns false to exit the function eadrly 
     }
-    return true; 
+    return true; // Returns true to continue the function 
   }
 
   
   
   
   
-  
+  //Check Deposit Fields Function
   function checkDepositFields(e) {
     const currentAmount = e.currentTarget.value;
     if (currentAmount.trim()) {
