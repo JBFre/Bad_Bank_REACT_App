@@ -4,6 +4,8 @@ import { UserContext } from './Context';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 
+
+
 export default function Withdraw() {
   const [amount, setAmount] = React.useState('');
   const [show, setShow] = React.useState(true);
@@ -20,12 +22,31 @@ export default function Withdraw() {
     }
   }, [amount]);  // Button state updates whenever 'amount' changes
 
-  function checkWithdrawFields() {
-    if (!amount.trim()) { // Check if the amount field is empty
+
+
+
+  function checkWithdrawFields(e) {
+    let statusTimeout; // Declare statusTimeout here
+
+    const currentAmount = e.currentTarget.value;
+    if (currentAmount.trim()) {
+      setButton(true);
+      setStatus(''); // Clear any previous error messages
+    } else {
+      setButton(false);
       setStatus('Error: Please enter a valid amount');
-      setTimeout(() => setStatus(''), 3000);
     }
+
+    if (statusTimeout) {// Clear any previous timeout 
+      clearTimeout(statusTimeout);
+    }
+
+    // Set a new timeout to clear the status after 3 seconds
+    statusTimeout = setTimeout(() => setStatus(''), 3000);
   }
+
+
+
 
   function handleWithdraw() {
     if (!button) return;  // If button is disabled, the function will return early
@@ -62,10 +83,16 @@ export default function Withdraw() {
     setShow(false);
   }
 
+
+
+
   function clearForm() {
     setAmount('');
     setShow(true);
   }
+
+
+
 
   return (
     <Card
@@ -81,13 +108,12 @@ export default function Withdraw() {
           <br />
           <input
             type="input"
-            style={{ backgroundColor: 'lightgray' }}
             className="form-control"
             id="amount"
             placeholder="Enter amount"
             value={amount}
             onChange={e => setAmount(e.currentTarget.value)}
-          //onBlur={checkWithdrawFields}  // Withdraw will be handled when user leaves the amount field
+            onBlur={checkWithdrawFields}
           />
           <br />
           <button

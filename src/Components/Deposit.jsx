@@ -1,5 +1,6 @@
 //Importing Libraries and Components
-import React from 'react';  // Imports the React library to use it's features
+import React, { useEffect } from 'react';
+//import React from 'react';  // Imports the React library to use it's features
 import Card from './Card';  // Imports a custom "Card" component from the Card.jsx file
 import { UserContext } from './Context'; // Imports "UserContexts" to access shared user data across components
 import 'bootstrap/dist/css/bootstrap.min.css'; // Imports the Bootstrap library to help style the application
@@ -16,9 +17,17 @@ export default function Deposit() { // Defines and exports the Deposit function 
   const ctx = React.useContext(UserContext); // Gets the user context from the Context.jsx file
   const [balance, setBalance] = React.useState(ctx.users[ctx.users.length - 1].balance); // Stores the balance of the last user in the users array
 
-  
-  
-  
+  useEffect(() => { // This function will run whenever the amount changes
+    if (amount.trim()) {  // Button will be enabled if amount is not empty
+      setButton(true); // Sets the button to enabled
+    } else {  // Button will be disabled if amount is empty
+      setButton(false); // Sets the button to disabled
+    }
+  }, [amount]); // Button state updates whenever 'amount' changes
+
+
+
+
   //Validate Function
   function validate(field, label) { // This function checks if the Deposit field is empty or not. If it is empty, it is set to a temporary error message.
     if (!field) {  // If the field is empty (false), the function will return early and display an error message at the bottom of the form for 3 seconds before clearing it out again.   
@@ -29,12 +38,13 @@ export default function Deposit() { // Defines and exports the Deposit function 
     return true; // Returns true to continue the function 
   }
 
-  
-  
-  
-  
+
+
+
   //Check Deposit Fields Function
   function checkDepositFields(e) {
+    let statusTimeout; // Declare statusTimeout here
+  
     const currentAmount = e.currentTarget.value;
     if (currentAmount.trim()) {
       setButton(true);
@@ -43,21 +53,20 @@ export default function Deposit() { // Defines and exports the Deposit function 
       setButton(false);
       setStatus('Error: Please enter a valid amount');
     }
-    
+  
     // Clear any previous timeout
     if (statusTimeout) {
       clearTimeout(statusTimeout);
     }
   
     // Set a new timeout to clear the status after 3 seconds
-    const statusTimeout = setTimeout(() => setStatus(''), 3000);
+    statusTimeout = setTimeout(() => setStatus(''), 3000);
   }
+ 
 
 
-  
-  
-  
-  
+
+  // Function to handle the deposit
   function handleDeposit() { //function to handle the deposit
     const user = ctx.users[ctx.users.length - 1]; //gets the last item in the users array
     console.log(user); //shows the default balance in the console output on line 1
@@ -76,7 +85,7 @@ export default function Deposit() { // Defines and exports the Deposit function 
     }
 
     if (!validate(button, 'button')) return; //checks if the button is disabled
-    
+
     if (!user) { //checks if the user exists
       setStatus('Error: User not found'); //displays the error message when the user is not found
       setTimeout(() => setStatus(''), 3000); //clears the error message after 3 seconds
@@ -84,20 +93,17 @@ export default function Deposit() { // Defines and exports the Deposit function 
     }
 
     user.balance = Number(user.balance) + Number(amount); //adds the amount entered to the balance
-    console.log(user); //shows the updated balance in the console output on line 2
+    console.log(user); //shows the updated balance in the console output
     setBalance(user.balance); //sets the balance to the updated balance
     ctx.users[ctx.users.length - 1] = user; //sets the last item in the users array to the updated user
-    console.table([ctx.users[0]]); //shows the updated items in the console table output on line 3
+    console.table([ctx.users[0]]); //shows the updated items in the console table output
     setShow(false); //hides the form
   }
 
-  
-  
-  
-  
-  
-  
-  
+
+
+
+  //Resets the form to its original state
   function clearForm() { //function to clear the form
     setAmount(''); //clears the amount field
     setShow(true); //shows the form
@@ -106,8 +112,9 @@ export default function Deposit() { // Defines and exports the Deposit function 
 
 
 
-
-
+  /*This 'return' statement renders the deposit form using the 'Card' component.
+  It sets the background color, header, and status message based on the application state.
+  Depending on whether the form is shown or not, it displays either the deposit form or a success message.*/
   return ( //returns the deposit form
     <Card //returns the card component
       bgcolor="dark" //sets the background color to primary
@@ -119,18 +126,18 @@ export default function Deposit() { // Defines and exports the Deposit function 
             Balance: ${balance /*shows the balance*/}
           </h2>
           Amount<br /> {/*displays the text Amount*/}
-          <input type="input"
-            style={{ backgroundColor: 'lightgray' }}
+          <input 
+            type="input"
             className="form-control"
             id="amount"
             placeholder="Enter amount"
             value={amount}
             onChange={e => { setAmount(e.currentTarget.value); checkDepositFields(e); }}
             onBlur={checkDepositFields/*sets the onBlur event to check the deposit fields*/}
-
           />
           <br />
-          <button type="submit" //returns the button element
+          <button 
+            type="submit" //returns the button element
             className="btn btn-light" //sets the class name to btn btn-light
             disabled={!button}
             onClick={handleDeposit}>Deposit</button>
@@ -141,8 +148,10 @@ export default function Deposit() { // Defines and exports the Deposit function 
           <h2>
             Balance: ${balance /*shows the balance*/}
           </h2>
-          <button type="submit" //returns the button element
+          <button
+            type="submit" //returns the button element
             className="btn btn-light" //sets the class name to btn btn-light
+            disabled={!button}
             onClick={clearForm /*sets the onClick event to clear the form*/}>
             Make another deposit  {/*sets the text to Make another deposit*/}
           </button> {/*ends the button element*/}

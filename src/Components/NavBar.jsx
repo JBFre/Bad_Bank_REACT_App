@@ -1,3 +1,4 @@
+console.log('NavBar.jsx');
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -6,9 +7,9 @@ export default function NavBar() {
   const [cssClassDeposit, setCssClassDeposit] = React.useState('nav-link');
   const [cssClassWithdraw, setCssClassWithdraw] = React.useState('nav-link');
   const [cssClassAllData, setCssClassAllData] = React.useState('nav-link');
-  
+
   const collapseDiv = React.useRef(null);
-  
+
   const navBarStyle = { position: 'fixed', top: '0', left: '0', right: '0', zIndex: '100' };
 
   function resetNavLinkClasses() {
@@ -19,6 +20,7 @@ export default function NavBar() {
   }
 
   function handleNavLinkClick(setClassFunction) {
+    console.log('Handling click');
     resetNavLinkClasses();
     setClassFunction('nav-link active');
 
@@ -29,7 +31,7 @@ export default function NavBar() {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={navBarStyle}>
-      <a className="navbar-brand text-right" href="#" style={{ marginLeft: '20px' }}>
+      <a className="navbar-brand text-right" onClick={resetNavLinkClasses} href="#" style={{ marginLeft: '20px' }}>
         Bank of Zod
       </a>
       <button

@@ -1,202 +1,67 @@
 /* Styles for the root container */
 #root {
   max-width: 1280px;
-  /* Set the maximum width of the root container */
   margin: 20px auto;
-  /* Center the container vertically and set margin to 50px at the top and bottom */
   padding: 2rem;
-  /* Add padding inside the root container */
   text-align: left;
-  /* Align text to the left within the root container */
   margin-left: -40px;
-  /* Move the container 20px from the left side of the screen */
 }
 
 body {
-  background-image: url('../src/assets/krypton.png'); /* Adjust the path to your image */
+  background-image: url('../src/assets/krypton.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* This keeps the background fixed while scrolling */
+  background-attachment: fixed;
 }
 
 .form-control {
-  background-color: #000000 !important;
-  color: white !important; 
-  border-color: rgb(128, 7, 7)!important;  
+  background-color: #3c3b3b !important;
+  color: white !important;
+  border-color: rgb(128, 7, 7) !important;
 }
 
-.btn, .btn-light:hover {
-  background-color: blue;
+input::placeholder {
+  color: red; /* Change to your desired placeholder text color */
+}
+
+.btn,
+.btn-light:hover {
+  background-color: rgb(51, 51, 52);
   color: white;
 }
 
-/* Add custom styles to elements with class names used in the provided code */
+input::placeholder {
+  color: white;
+}
 
-/* Style the "table" element */
+
 .table {
-  /* Your custom styles for the table here */
-  border-collapse: collapse; /* Example: collapse borders for table cells */
-  border-color: red; /* Set the border color (if needed) */
-  border-width: 5px; /* Increase the border thickness to 2 pixels */
-}
+  border-collapse: collapse;
+  border-color: red;
+  border-width: 5px;
+  }
 
-/* Style table headers (th) */
 .table th {
-  /* Your custom styles for table headers here */
-  background-color: #292b2c; /* Example: Change background color for table headers */
-  color: white; /* Example: Change text color for table headers */
-  font-weight: bold; /* Example: Make text bold for table headers */
-  border-color: red; /* Set the border color (if needed) */
-  border-width: 2px; /* Increase the border thickness to 2 pixels */
+  background-color: #292b2c;
+  color: white;
+  font-weight: bold;
+  border-color: red;
+  border-width: 2px;
 }
 
-/* Style table rows (tr) */
 .table tr {
-  background-color: rgb(26, 25, 25); /* Example: Change background color for table headers */
-  color: white; /* Example: Change text color for table headers */
-  font-weight: bold; /* Example: Make text bold for table headers */
-  border-color: red; /* Set the border color (if needed) */
-  border-width: 2px; /* Increase the border thickness to 2 pixels */
+  background-color: rgb(26, 25, 25);
+  color: white;
+  font-weight: bold;
+  border-color: red;
+  border-width: 2px;
 }
 
-/* Style table cells (td) */
 .table td {
-  background-color:#464646; /* Example: Change background color for table headers */
-  color: white; /* Example: Change text color for table headers */
-  font-weight: bold; /* Example: Make text bold for table headers */
-  border-color: red; /* Set the border color (if needed) */
-  border-width: 2px; /* Increase the border thickness to 2 pixels */
+  background-color: #464646;
+  color: white;
+  font-weight: bold;
+  border-color: red;
+  border-width: 2px;
+  /* Increase the border thickness to 2 pixels */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Style for the navigation bar */
-/* .navbar { */
-  /* position: fixed; */
-  /* Fix the position of the navbar */
-  /* top: 0; */
-  /* Position it at the top of the viewport */
-  /* left: 0; */
-  /* Position it at the left of the viewport */
-  /* right: 0; */
-  /* Stretch it across the full width of the viewport */
-  /* z-index: 1000; */
-  /* Set the z-index to control stacking order */
-/* } */
-
-/* Define styles for elements with the "logo" class */
-/* .logo { */
-  /* height: 15em; */
-  /* Set the height of the logo element */
-  /* padding: 1.5em; */
-  /* Add padding around the logo for spacing and clickability */
-  /* will-change: filter; */
-  /* Hint to the browser that the "filter" property will change */
-  /* transition: filter 300ms; */
-  /* Apply a smooth transition to the "filter" property */
-/* } */
-
-/* .zod
-{
-  height: 6em;
-  Set the height of the logo element
-  padding: 1.5em;
-  Add padding around the logo for spacing and clickability
-  will-change: filter;
-  Hint to the browser that the "filter" property will change
-  transition: filter 300ms;
-  Apply a smooth transition to the "filter" property
-} */
-
-/* Define styles for the "logo" class when it's hovered over */
-/* .logo:hover { */
-  /* filter: drop-shadow(0 0 2em #646cffaa); */
-  /* Add a drop-shadow effect on hover */
-/* } */
-
-/* Define styles for elements with both "logo" and "react" classes when hovered */
-/* .logo.react:hover { */
-  /* filter: drop-shadow(0 0 2em #61dafbaa); */
-  /* Add a different drop-shadow effect on hover */
-/* } */
-
-
-/* Keyframe animation to spin the logo */
-/* @keyframes logo-spin { */
-  /* from { */
-    /* transform: rotate(0deg); */
-    /* Start rotation from 0 degrees */
-  /* } */
-
-  /* to { */
-    /* transform: rotate(360deg); */
-    /* Rotate the logo 360 degrees for a full spin */
-  /* } */
-/* } */
-
-/* Apply the logo-spin animation to elements with the "logo" class */
-/* @media (prefers-reduced-motion: no-preference) { */
-  /* a:nth-of-type(2) .logo { */
-    /* animation: logo-spin infinite 20s linear; */
-    /* Apply the logo-spin animation */
-  /* } */
-/* } */
-
-/* Styles for the "read-the-docs" class */
-/* .read-the-docs { */
-  /* color: #e09898; */
-  /* Set the text color for elements with the "read-the-docs" class */
-/* } */
-
-/* Styles for the table header */
-/* table.th { */
-  /* background-color: rgb(117, 115, 115) !important; */
-  /* Set the background color of table header cells */
-  /* color: rgb(255, 255, 255) !important; */
-  /* Set the text color of table header cells */
-/* } */
-
-/* Styles for the table body */
-/* table.td { */
-  /* background-color: rgb(68, 66, 66) !important; */
-  /* Set the background color of table data cells */
-  /* color: rgb(255, 255, 255) !important; */
-  /* Set the text color of table data cells */
-/* } */
