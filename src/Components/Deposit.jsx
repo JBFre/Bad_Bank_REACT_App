@@ -44,7 +44,7 @@ export default function Deposit() { // Defines and exports the Deposit function 
   //Check Deposit Fields Function
   function checkDepositFields(e) {
     let statusTimeout; // Declare statusTimeout here
-  
+
     const currentAmount = e.currentTarget.value;
     if (currentAmount.trim()) {
       setButton(true);
@@ -53,16 +53,16 @@ export default function Deposit() { // Defines and exports the Deposit function 
       setButton(false);
       setStatus('Error: Please enter a valid amount');
     }
-  
+
     // Clear any previous timeout
     if (statusTimeout) {
       clearTimeout(statusTimeout);
     }
-  
+
     // Set a new timeout to clear the status after 3 seconds
     statusTimeout = setTimeout(() => setStatus(''), 3000);
   }
- 
+
 
 
 
@@ -126,7 +126,7 @@ export default function Deposit() { // Defines and exports the Deposit function 
             Balance: ${balance /*shows the balance*/}
           </h2>
           Amount<br /> {/*displays the text Amount*/}
-          <input 
+          <input
             type="input"
             className="form-control"
             id="amount"
@@ -136,7 +136,7 @@ export default function Deposit() { // Defines and exports the Deposit function 
             onBlur={checkDepositFields/*sets the onBlur event to check the deposit fields*/}
           />
           <br />
-          <button 
+          <button
             type="submit" //returns the button element
             className="btn btn-light" //sets the class name to btn btn-light
             disabled={!button}
